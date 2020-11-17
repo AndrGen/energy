@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="energy" Class="DataClassesEnergyDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=energy;Persist Security Info=True;User ID=testuser" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="energyConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.measuring_values" Member="measuring_values">
+    <Type Name="measuring_values">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="parametr_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="meter_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="value" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="value_dt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="meters_measuring_values" Member="meters" ThisKey="meter_id" OtherKey="id" Type="meters" IsForeignKey="true" />
+      <Association Name="parameters_measuring_values" Member="parameters" ThisKey="parametr_id" OtherKey="id" Type="parameters" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.meters" Member="meters">
+    <Type Name="meters">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="caption" Type="System.String" DbType="Char(255) NOT NULL" CanBeNull="false" />
+      <Association Name="meters_measuring_values" Member="measuring_values" ThisKey="id" OtherKey="meter_id" Type="measuring_values" />
+    </Type>
+  </Table>
+  <Table Name="dbo.parameters" Member="parameters">
+    <Type Name="parameters">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="caption" Type="System.String" DbType="Char(255) NOT NULL" CanBeNull="false" />
+      <Column Name="measure_units" Type="System.String" DbType="Char(255) NOT NULL" CanBeNull="false" />
+      <Association Name="parameters_measuring_values" Member="measuring_values" ThisKey="id" OtherKey="parametr_id" Type="measuring_values" />
+    </Type>
+  </Table>
+  <Table Name="dbo.energy_report_view" Member="energy_report_view">
+    <Type Name="energy_report_view">
+      <Column Name="time_diff" Type="System.String" DbType="NVarChar(13)" CanBeNull="true" />
+      <Column Name="act_in" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="act_out" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="react_in" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="react_ot" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="value_dt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="meter_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

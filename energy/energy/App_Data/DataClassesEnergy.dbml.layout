@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.125, 8.5" name="DataClassesEnergy">
+  <DataContextMoniker Name="/DataClassesEnergyDataContext" />
+  <nestedChildShapes>
+    <classShape Id="080c49db-6df7-495f-bfbb-dcc1ee2197cf" absoluteBounds="4.5, 1.375, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DataClassesEnergyDataContext/measuring_values" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b8fd9c1a-5bfe-4559-8689-043c0c83e1a9" absoluteBounds="4.515, 1.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6a14fc6a-d304-4277-bdd1-8d88dc06ce83" absoluteBounds="8.875, 2, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/DataClassesEnergyDataContext/meters" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2e7edf25-ad65-447c-a99c-ef5c9c3cb5a3" absoluteBounds="8.89, 2.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.875 : 2.57294840494792); (6.5 : 2.57294840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesEnergyDataContext/meters/meters_measuring_values" />
+      <nodes>
+        <classShapeMoniker Id="6a14fc6a-d304-4277-bdd1-8d88dc06ce83" />
+        <classShapeMoniker Id="080c49db-6df7-495f-bfbb-dcc1ee2197cf" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="f25feb24-c570-4940-b372-37f961bf8dc8" absoluteBounds="1.625, 2.875, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DataClassesEnergyDataContext/parameters" />
+      <nestedChildShapes>
+        <elementListCompartment Id="48d66060-1cf6-4e8c-ab5f-68c8c36dcd65" absoluteBounds="1.6400000000000001, 3.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.625 : 3.70359587760417); (5.5 : 3.70359587760417); (5.5 : 3.14589680989583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesEnergyDataContext/parameters/parameters_measuring_values" />
+      <nodes>
+        <classShapeMoniker Id="f25feb24-c570-4940-b372-37f961bf8dc8" />
+        <classShapeMoniker Id="080c49db-6df7-495f-bfbb-dcc1ee2197cf" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="1d5b5547-28d9-4d62-aa10-a640f1532bda" absoluteBounds="4.875, 4.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataClassesEnergyDataContext/energy_report_view" />
+      <nestedChildShapes>
+        <elementListCompartment Id="72cd56d9-49d5-4e7f-8b1c-9b85578c4fc6" absoluteBounds="4.89, 5.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
